@@ -36,17 +36,7 @@ namespace WebApplication1.Controllers
           
         }
 
-        private IEnumerable<WeatherForecast> GetWeatherList()
-        {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
-        }
+       
 
         /// <summary>
         /// Method using status codes
@@ -66,7 +56,7 @@ namespace WebApplication1.Controllers
             //URI - http://localhost:53143/weatherforecast/api/weather/cool
 
             var rng = new Random();
-            var WeatherList = GetWeatherList();
+            var WeatherList = _weatherService.GetWeatherList();
 
             var ret = WeatherList.FirstOrDefault(entry => entry.Summary.ToUpper() == summary.ToUpper());
             if (ret == null)
@@ -87,7 +77,7 @@ namespace WebApplication1.Controllers
             if (forecast == null)
                 return BadRequest();
 
-            var WeatherList = GetWeatherList().ToList();
+            var WeatherList = _weatherService.GetWeatherList().ToList();
 
             if (!ModelState.IsValid)
                 return BadRequest();
