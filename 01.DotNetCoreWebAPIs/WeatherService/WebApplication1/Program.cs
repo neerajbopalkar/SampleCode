@@ -11,9 +11,27 @@ namespace WebApplication1
 {
     public class Program
     {
+        private static ILogger<Program> _logger;
+
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var logFactory = new LoggerFactory().AddLog4Net();
+
+            _logger = logFactory.CreateLogger<Program>();
+
+            _logger.LogInformation("Starting main in Program.cs");
+
+            AppDomain.CurrentDomain.UnhandledException += UnhandledException;
+
+            var host = CreateHostBuilder(args).Build();
+            
+            
+            host.Run();
+        }
+
+        private static void UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            _logger.LogError((e.ExceptionObject as Exception).ToString());
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
