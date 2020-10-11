@@ -8,4 +8,4 @@
     1.5 Exception handling
 2. Dot net core ASP.NET   
 3. Multithreading app  
-4. 
+4. Design patterns
