@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BethanysPieShopWebApp.Models;
+using BethanysPieShopWebApp.ViewModels;
 
 namespace BethanysPieShopWebApp.Controllers
 {
@@ -28,8 +29,19 @@ namespace BethanysPieShopWebApp.Controllers
         /// <returns></returns>
         public ViewResult List()
         {
-           
-            return View(_pieRepository.AllPies);
+            //** instead of passing data from viewbag, better approach is use ViewModel
+            //Viewbag is dynamic type
+            //ViewBag.CurrentCategory = "Cheese cakes!";
+            //return View(_pieRepository.AllPies);
+
+            var viewModel = new PiesListViewModel()
+            {
+                Pies = _pieRepository.AllPies,
+                CurrentCategory = "Cheese cakes!"
+            };
+
+            return View(viewModel);
+
         }
 
         //public IActionResult Index()
