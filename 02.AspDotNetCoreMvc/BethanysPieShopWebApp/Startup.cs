@@ -6,6 +6,7 @@ using BethanysPieShopWebApp.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,11 +25,20 @@ namespace BethanysPieShopWebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //** Add EF core
+            services.AddDbContext<AppDbContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+                );
 
             //** creates instance and maintains it for lifetime of http request
-            services.AddScoped<IPieRepository, MockPieRepository>();
-            services.AddScoped<ICategoryRepository, MockCategoryRepository>();
-            
+            //services.AddScoped<IPieRepository, MockPieRepository>();
+            //services.AddScoped<ICategoryRepository, MockCategoryRepository>();
+
+            //** commented mock repositories above and now using actual SQL repositoryies
+            services.AddScoped<IPieRepository, SqlPieRepository>();
+            services.AddScoped<ICategoryRepository, SqlCategoryRepository>();
+
+
             //** returns new instance for every new injection request
             //services.AddTransient
             //** same instance for all requests
