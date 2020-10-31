@@ -19,5 +19,8 @@ namespace BethanysPieShopWebApp.Models
         public bool InStock { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
+        
+        //Added new property
+        public string Notes { get; set; }
     }
 }
