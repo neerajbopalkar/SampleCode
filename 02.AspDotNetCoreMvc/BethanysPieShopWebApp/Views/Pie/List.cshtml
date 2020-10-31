@@ -27,7 +27,8 @@
             <div class="caption">
                 <h3 class="pull-right">@pie.Price.ToString("c")</h3>
                 <h3>
-                    <a>@pie.Name</a>
+                    @***adding tag helper here!!. The id params is passed appending to asp-route *@
+                    <a asp-controller="Pie" asp-action="Details" asp-route-id="@pie.PieId" >@pie.Name</a>
                 </h3>
                 <p>@pie.ShortDescription</p>
             </div>

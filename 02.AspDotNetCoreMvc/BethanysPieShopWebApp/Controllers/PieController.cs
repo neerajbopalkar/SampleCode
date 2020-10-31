@@ -60,5 +60,16 @@ namespace BethanysPieShopWebApp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        public IActionResult Details(int id)
+        {
+            var pie = _pieRepository.GetPieById(id);
+
+            if (pie == null)
+                return NotFound();
+
+            return View(pie);
+        }
     }
 }
