@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="BethanysPieShopWebApp.Controllers.PieController">
+    <Position X="0.5" Y="0.5" Width="7.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAQAAAAAAAAAAIAAAAAACACAAAAAAAAI=</HashCode>
+      <FileName>Controllers\PieController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BethanysPieShopWebApp.Models.AppDbContext">
+    <Position X="11" Y="4" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAEAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AppDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BethanysPieShopWebApp.Models.MockPieRepository">
+    <Position X="8.5" Y="8.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAACAAAAAAAAAAAAAAAAAAAACAAAAAAAAEAA=</HashCode>
+      <FileName>Models\MockPieRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_categoryRepository" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BethanysPieShopWebApp.Models.SqlPieRepository">
+    <Position X="12.5" Y="8.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAACAAAEAA=</HashCode>
+      <FileName>Models\SqlPieRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_appDbContext" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BethanysPieShopWebApp.Startup">
+    <Position X="0.5" Y="3.25" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAgAAACAAAAAA=</HashCode>
+      <FileName>Startup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BethanysPieShopWebApp.Models.Category">
+    <Position X="8.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAgAABAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BethanysPieShopWebApp.Models.Pie">
+    <Position X="11.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgQAAAAQoAAgAAAAAAAAQCAAAQAQACAAQAAAAACAA=</HashCode>
+      <FileName>Models\Pie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BethanysPieShopWebApp.ViewModels.PiesListViewModel">
+    <Position X="15.25" Y="0.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\PiesListViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BethanysPieShopWebApp.Models.MockCategoryRepository">
+    <Position X="0.75" Y="7.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\MockCategoryRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BethanysPieShopWebApp.Models.SqlCategoryRepository">
+    <Position X="4.5" Y="7.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Models\SqlCategoryRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_appDbContext" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="BethanysPieShopWebApp.Models.IPieRepository">
+    <Position X="9.75" Y="6.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Models\IPieRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BethanysPieShopWebApp.Models.ICategoryRepository">
+    <Position X="4.25" Y="6" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ICategoryRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

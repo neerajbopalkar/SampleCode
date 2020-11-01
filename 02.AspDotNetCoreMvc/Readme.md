@@ -1,3 +1,7 @@
+Class Diagram -
+
+![Alt text](Images/Diagram.png?raw=true "List of pies")
+
 List of Pies -
 
 ![Alt text](Images/PieList.png?raw=true "List of pies")
