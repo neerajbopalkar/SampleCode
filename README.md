@@ -6,7 +6,7 @@
     1.3 **Working with services & DI**  - *Registering and Injecting logger and custom services*  
     1.4 **Environment specific config files**    
     1.5 **Exception handling**
-2. ASP.NET Core MVC - V3.0 [Images - [See here](02.AspDotNetCoreMvc/readme.md)]
+2. ASP.NET Core MVC - V3.0 [Images - [See here](02.AspDotNetCoreMvc/Readme.md)]
    
    *Reference - PluralSight Course by Gill Cleeren*
 
