@@ -11,5 +11,15 @@
             </h3>
             <p>@Model.ShortDescription</p>
         </div>
+
+        @* add to cart button to be available in partial view, on every pie card *@
+        <div class="addToCart">
+            <p class="button">
+                <a class="btn btn-primary"
+                   asp-controller="ShoppingCart"
+                   asp-action="AddToShoppingCart"
+                   asp-route-pieId="@Model.PieId">Add to cart</a>
+            </p>
+        </div>
     </div>
 </div>

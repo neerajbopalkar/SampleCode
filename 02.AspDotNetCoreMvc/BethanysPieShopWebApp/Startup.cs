@@ -38,6 +38,10 @@ namespace BethanysPieShopWebApp
             services.AddScoped<IPieRepository, SqlPieRepository>();
             services.AddScoped<ICategoryRepository, SqlCategoryRepository>();
 
+            //when user first visits the site, check if user has CART available, if not create it.
+            services.AddScoped<ShoppingCart>(serviceProvider => ShoppingCart.GetCart(serviceProvider));
+            services.AddHttpContextAccessor();
+            services.AddSession();
 
             //** returns new instance for every new injection request
             //services.AddTransient
@@ -84,6 +88,11 @@ namespace BethanysPieShopWebApp
 
             //     Enables static file serving for the current request path
             app.UseStaticFiles();
+
+            //     Adds the Microsoft.AspNetCore.Session.SessionMiddleware to automatically enable
+            //     session state for the application.
+            // ** CALL it before UseRouting
+            app.UseSession();
 
             //     Adds a Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware middleware to the
             //     specified Microsoft.AspNetCore.Builder.IApplicationBuilder.
