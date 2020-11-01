@@ -48,6 +48,32 @@
 
 3. Multithreading app  
 4. Design patterns
+5. Performance, scalability & security
+
+    Performance is an indication of the responsiveness of a system to execute any action **within a given time interval**, while scalability is ability of a system either to handle increases in load **without impact on performance** or for the available resources to be readily increased
+
+
+    [Performance and Scalability patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/category/performance-scalability)
+
+    [Performance Vs Scalability](https://www.dynatrace.com/news/blog/performance-vs-scalability/)
+
+    [ASP.NET Performance](https://docs.microsoft.com/en-us/aspnet/mvc/overview/performance/)
+
+        Using Asynchronous Methods in ASP.NET MVC 4
+        Profile and debug your ASP.NET MVC app with Glimpse
+        Bundling and Minification
+
+    [10 Best Practices to Secure ASP.NET Core MVC Web Applications | Syncfusion Blogs](https://www.syncfusion.com/blogs/post/10-practices-secure-asp-net-core-mvc-app.aspx)
+
+    [Security, Authentication, and Authorization with ASP.NET MVC](https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/)
+        
+        How to make an ASP.NET site more secure, and how to implement authentication and authorization.
+
+        - Create an ASP.NET MVC 5 App with Facebook, Twitter, LinkedIn and Google OAuth2 Sign-on (C#)
+        - Create a secure ASP.NET MVC 5 web app with log in, email confirmation and password reset (C#)
+        - ASP.NET MVC 5 app with SMS and email Two-Factor Authentication
+        - XSRF/CSRF Prevention in ASP.NET MVC and Web Pages
+        Preventing Open Redirection Attacks (C#)
 
 Images
 
