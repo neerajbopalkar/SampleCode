@@ -23,6 +23,8 @@ namespace Vidly
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                      //Below did not work well for top menu rendering.  <div class="navbar-collapse collapse"> is missing.
+                      // "~/Content/bootstrap-lumen.css",
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
         }
