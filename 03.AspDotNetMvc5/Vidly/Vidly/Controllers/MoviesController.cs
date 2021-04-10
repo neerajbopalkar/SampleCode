@@ -36,5 +36,10 @@ namespace Vidly.Controllers
 
             return View(viewModel);
         }
+
+        public ActionResult Index()
+        {
+            return View();
+        }
     }
 }
