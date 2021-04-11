@@ -1,0 +1,58 @@
+﻿@model Vidly.ViewModels.CustomerFormViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Customer</h2>
+
+@using (Html.BeginForm("Save", "Customers"))
+{
+    //This class "form-group" is required for responsive UI using bootstrap
+    <div class="form-group">
+        @* used instead of <label> *@
+        @Html.LabelFor(model => model.Customer.Name)
+
+
+        @* used instead of <input>
+            tag helper in ASP.NET supports validations automatically for this field
+            here required field and max length validations added automatically from Customer model class - annotation on name property.
+            for raw HTML i.e. input tag, need to write all validations manually
+        *@
+        @* for every control on form, apply form-control class for bootstrap *@
+        @Html.TextBoxFor(model => model.Customer.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(model => model.Customer.Birthdate)
+
+        @Html.TextBoxFor(model => model.Customer.Birthdate,"{0: d MMM yyyy}", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+
+        @Html.LabelFor(model => model.Customer.MembershipTypeId)
+
+        @Html.DropDownListFor(model => model.Customer.MembershipTypeId, 
+            new SelectList(Model.MembershipTypes, "Id","Name"), 
+            "Select Membership Type",
+            new { @class = "form-control" })
+    </div>
+
+    //commented this since it gives wierd GUI. Need to follow format @ https://getbootstrap.com/docs/4.0/components/forms/
+    @*<div class="form-group">
+
+            @Html.LabelFor(model => model.IsSubscribedToNewsletter)
+
+            @Html.CheckBoxFor(model => model.IsSubscribedToNewsletter, new { @class = "form-control" })
+        </div>*@
+
+    <div class="form-check">
+        @*taken from - https://getbootstrap.com/docs/4.0/components/forms/*@
+        @Html.CheckBoxFor(model => model.Customer.IsSubscribedToNewsletter) Subscribed to newsletter?
+    </div>
+
+  
+    @Html.HiddenFor(m => m.Customer.Id)
+    <button type="submit" class="btn btn-primary">Save</button>
+}

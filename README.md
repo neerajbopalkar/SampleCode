@@ -39,6 +39,9 @@
     6. Adding login capabilities to the site
     
 3. ASP.NET MVC 5 (Web application and Web APIs)
+ https://github.com/mosh-hamedani/vidly-mvc-5
+ https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
+ https://getbootstrap.com/docs/4.0/components/forms/
 
     1. fundamental features:  
         1. routing, 
@@ -114,6 +117,8 @@
     6. [Security - OWASP .NET Framework Guidance](https://cheatsheetseries.owasp.org/cheatsheets/DotNet_Security_Cheat_Sheet.html#net-framework-guidance)
     7. [Security - OWASP Top 10 ASP.NET MVC Guidance](https://cheatsheetseries.owasp.org/cheatsheets/DotNet_Security_Cheat_Sheet.html#asp-net-mvc-guidance)
 
+    8. [In GitHub, is there a way to see all (recent) commits on all branches?](https://stackoverflow.com/questions/33926874/in-github-is-there-a-way-to-see-all-recent-commits-on-all-branches)
+        
 
 
 <!-- ![Alt text](Images/Tulips.jpg?raw=true "Tulipse") -->
