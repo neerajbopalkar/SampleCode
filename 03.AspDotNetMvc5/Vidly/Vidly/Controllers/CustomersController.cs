@@ -67,31 +67,49 @@ namespace Vidly.Controllers
 
             }
         };
-    // GET: Customers
-    public ActionResult Index()
+        // GET: Customers
+        public ActionResult Index()
         {
             //var customers = _context.Customers.Include(c => c.MembershipType).ToList();
 
-           
+
 
             return View(_customers);
-         
+
         }
 
         public ActionResult New()
         {
             var viewModel = new CustomerFormViewModel()
             {
-              MembershipTypes = _membershipTypes
+                //added to avoid error on validation summary:The Id field is required. 
+                //the id will be initialized to 0 and won't throw error while saving
+                Customer = new Customer(),
+                MembershipTypes = _membershipTypes
 
             };
-            return View("CustomerForm",viewModel);
+            return View("CustomerForm", viewModel);
         }
 
         //example of model binding.
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
+
+            //validations. The form data passed by form is binded to customer object in a parameter
+            //validations are done on basis of data annotations in Customer class
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel()
+                {
+                    Customer = customer,
+                    MembershipTypes = _membershipTypes
+                };
+
+                return View("CustomerForm", viewModel);
+            }
+
             //code to save customer here using DB context
 
 
@@ -131,5 +149,5 @@ namespace Vidly.Controllers
         }
     }
 
-    
+
 }
