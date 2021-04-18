@@ -39,7 +39,7 @@
             //returns JSON using API
 
             //provide configuration object as input to datatable function, to integrate with ajax
-            $("#customers").DataTable({
+            var table = $("#customers").DataTable({
                 ajax: {
                     url: "/api/customers",
                     //this attribute is used if data source object is nested inside returned object
@@ -90,7 +90,12 @@
                                     method: "DELETE",
                                     success: function () {
                                         //console.log("Success");
-                                        deleteButton.parents("tr").remove();
+                                        //this code does not delete record from datatable's list. 
+                                        //You can search on deleted records and they are found.
+                                        //deleteButton.parents("tr").remove();
+
+                                        table.row(deleteButton.parents("tr")).remove().draw();
+
                                     }
 
                                 });
