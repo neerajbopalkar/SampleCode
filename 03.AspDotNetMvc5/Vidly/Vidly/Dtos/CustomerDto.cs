@@ -19,6 +19,8 @@ namespace Vidly.Dtos
 
         public byte MembershipTypeId { get; set; }
 
+        public MembershipTypeDto MembershipType { get; set; }
+
         //Commented since it will throw error in custom validator, since it uses customer class.
         //[Min18Years]
         public DateTime? Birthdate { get; set; }

@@ -21,7 +21,7 @@ namespace Vidly.Controllers
                     Id = 1,
                     Name = "Monthly"
                 },
-                MembershipTypeId = 1,
+                MembershipTypeId = 2,
                 Birthdate = new DateTime(2002,2,2),
                 IsSubscribedToNewsletter = false
             },
@@ -38,6 +38,7 @@ namespace Vidly.Controllers
                 Birthdate = new DateTime(2001,1,1),
                 IsSubscribedToNewsletter = true
             }
+          
         };
 
         private List<MembershipType> _membershipTypes = new List<MembershipType>()
@@ -72,9 +73,10 @@ namespace Vidly.Controllers
         {
             //var customers = _context.Customers.Include(c => c.MembershipType).ToList();
 
-
-
-            return View(_customers);
+            //using jquery ajax to get data from API, so this code is not required
+            //return View(_customers);
+            
+            return View();
 
         }
 

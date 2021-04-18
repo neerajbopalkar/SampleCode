@@ -8,12 +8,6 @@
 
 <h2>Customers</h2>
 
-@if (!Model.Any())
-{
-    <p>We don't have any customers yet.</p>
-}
-else
-{
 <table id="customers" class="table table-bordered table-hover">
     @* https://stackoverflow.com/questions/25377637/datatables-cannot-read-property-mdata-of-undefined
 
@@ -22,41 +16,60 @@ else
         Also check to make sure all your rows including header row have the same number of columns.
     *@
     <thead>
-        <tr>
-            <th>Customer</th>
-            <th>Membership Type</th>
-            <th>Delete</th>
-        </tr>
+    <tr>
+        <th>Customer</th>
+        <th>Membership Type</th>
+        <th>Delete</th>
+    </tr>
     </thead>
 
     <tbody>
-        @foreach (var customer in Model)
-        {
-
-            <tr>
-                <td>
-                    @Html.ActionLink(customer.Name, "Edit",
-                        "Customers", new { id = customer.Id }, null)
-                </td>
-                <td>
-                    @customer.MembershipType.Name
-                </td>
-                <td>
-                    @* added data attribute *@
-                    <button data-customer-id="@customer.Id" class="btn-link js-delete">Delete</button>
-                </td>
-            </tr>
-
-        }
+       
     </tbody>
 </table>
-}
 @section scripts
 {
     <script>
         $(document).ready(function () {
 
-            $("#customers").DataTable();
+            //**Important : below datatable is used instead of razor syntax earlier, 
+            //if there is huge data and jquery will need to remember & parse large DOM
+            //gets PERFORMANCE BOOST if there is large data, since server does not return 
+            //HTML tags when used with tag helpers, it simply
+            //returns JSON using API
+
+            //provide configuration object as input to datatable function, to integrate with ajax
+            $("#customers").DataTable({
+                ajax: {
+                    url: "/api/customers",
+                    //this attribute is used if data source object is nested inside returned object
+                    //in our case data is not nested in json. hence blank.
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        //data: which column to refer to for data of this column
+                        data: "name",
+                        render: function (data, type, customer) {
+
+                            return "<a href='/customers/edit/" + customer.id + "'>" + customer.name + "<\a>";
+
+                        }
+
+                    },
+                    //for membership name
+                    {
+                        data: "membershipType.name"
+                    },
+                    {
+                        data: "id",
+                        render: function(data) {
+                            return "<button class='btn-link js-delete' data-customer-id=" + data + ">Delete</button>"
+                        }
+                    }
+                    ]
+
+            });
 
             //$("#customers .js-delete").on("click",
             //optimized above line - to avoid keeping the functions in memory e.g. if there are 15 rows, there will be 15 functions in memory

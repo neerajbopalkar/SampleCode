@@ -7,6 +7,7 @@ using System.Web.Http;
 using AutoMapper;
 using Vidly.Dtos;
 using Vidly.Models;
+using System.Data.Entity;
 
 namespace Vidly.Controllers.Apis
 {
@@ -37,6 +38,19 @@ namespace Vidly.Controllers.Apis
                     Name = "Yearly"
                 },
                 MembershipTypeId = 4,
+                Birthdate = new DateTime(2001,1,1),
+                IsSubscribedToNewsletter = true
+            }  ,
+            new Customer()
+            {
+                Id =3,
+                Name = "Peter Griffin",
+                MembershipType = new MembershipType()
+                {
+                    Id = 4,
+                    Name = "Pay as you go"
+                },
+                MembershipTypeId = 1,
                 Birthdate = new DateTime(2001,1,1),
                 IsSubscribedToNewsletter = true
             }
