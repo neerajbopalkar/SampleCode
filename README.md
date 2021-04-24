@@ -1,14 +1,10 @@
 
 # Sample Code!
 
-See the differences between two commits
-https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-comparing-branches-in-pull-requests#three-dot-and-two-dot-git-diff-comparisons
+See the differences between two commits - [Details](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-comparing-branches-in-pull-requests#three-dot-and-two-dot-git-diff-comparisons)
 
-For example, this URL uses the shortened seven-character SHA codes to compare commits c3a414e and faf7c6f: https://github.com/github/linguist/compare/c3a414e..faf7c6f.
 
-This repo example - 
-three dots - https://github.com/neerajbopalkar/SampleCode/compare/ebe5a2f78038cb93c8171e2137181e991f1e4de4...d369071bea86b2bc6bd91d6daed9f6813f6d457a
-two dots (directly see differences without commit history) - https://github.com/neerajbopalkar/SampleCode/compare/ebe5a2f78038cb93c8171e2137181e991f1e4de4..d369071bea86b2bc6bd91d6daed9f6813f6d457a
+Current repo example: [Here](https://github.com/neerajbopalkar/SampleCode/compare/ebe5a2f78038cb93c8171e2137181e991f1e4de4..d369071bea86b2bc6bd91d6daed9f6813f6d457a)
 
 1. Dot Net Core web apis - V3.1  
     1.1 Configure ASP.NET request pipeline - *add Log4Net*  
