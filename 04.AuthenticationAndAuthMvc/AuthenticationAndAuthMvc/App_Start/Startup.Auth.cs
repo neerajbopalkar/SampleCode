@@ -58,11 +58,12 @@ namespace AuthenticationAndAuthMvc
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "48926192400-4om45tv84olsb8qqdp4e5i7hv2o5kk3a.apps.googleusercontent.com",
+                //removed secret for security purposes
+                ClientSecret = ""
+            });
         }
     }
 }
