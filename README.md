@@ -126,6 +126,11 @@ Current repo example: [Here](https://github.com/neerajbopalkar/SampleCode/compar
 
     8. [In GitHub, is there a way to see all (recent) commits on all branches?](https://stackoverflow.com/questions/33926874/in-github-is-there-a-way-to-see-all-recent-commits-on-all-branches)
         
+    9. Creating own OAuth 2 Authorization Server - Creating **identity** server 
+       
+       Code - [here](https://github.com/IdentityServer/IdentityServer3.Samples) & 
+       
+       Overview [here](http://docs.identityserver.io/en/release/intro/big_picture.html#)
 
 
 <!-- ![Alt text](Images/Tulips.jpg?raw=true "Tulipse") -->
