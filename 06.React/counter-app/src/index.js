@@ -7,11 +7,14 @@ import 'bootstrap/dist/css/bootstrap.css';
 //getting error below on only importing bootstrap. Hence need to install jquery and popper.js
 //: https://stackoverflow.com/questions/49589282/bootstrap-in-react-cant-resolve-jquery-module
 import $ from 'jquery';
-import Popper from 'popper.js'; 
+import Popper from 'popper.js';
+import Counter from './components/counter' 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    {/* Instead of App, render Component counter */}
+    <Counter/>
   </React.StrictMode>,
   document.getElementById('root')
 );
